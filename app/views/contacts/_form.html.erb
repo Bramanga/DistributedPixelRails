@@ -1,0 +1,67 @@
+<%= form_for(contact) do |f| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <a id="contact-form"></a>
+  <div class="fh5co-contact animate-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-md-push-2 animate-box">
+          <h2>Contact Us</h2>
+          <p>Drop us a line if you are interested in learning more or think you would like to work with us.</p><br><br>
+
+        </div>
+        <div class="col-md-3">
+          <h3>Contact Info.</h3>
+          <ul class="contact-info">
+            <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;<a href="tel:+19893213806">+ 989 321 3806</a></li>
+            <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;<a href="mailto:bramanga@gmail.com">bramanga@gmail.com</a></li>
+            <li><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;<a href="http://distributedpixel.com">www.distributedpixel.com</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_field :name, :class => "form-control", :type => "text", :placeholder => "Name", :required => true %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_field :company, :class => "form-control", :type => "text", :placeholder => "Company" %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_field :phone, :class => "form-control", :type => "text", :placeholder => "Phone" %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_field :email, :class => "form-control", :type => "text", :placeholder => "Email", :required => true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.text_area :body, :class => "form-control", :type => "textarea", :placeholder => "Message", :required => true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.submit "Send Message" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
