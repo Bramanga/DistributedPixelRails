@@ -28,6 +28,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        ContactMailer.contact_email(@contact.name, @contact.company, @contact.phone, @contact.email, @contact.body).deliver_now
         format.html { redirect_to new_contact_path, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
       else

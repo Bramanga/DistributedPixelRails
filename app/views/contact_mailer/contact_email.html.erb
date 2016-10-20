@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Message from <%= @name %> [<%= @email %>]</h1>
+    <% if @company %>
+      <h2>Company: <%= @company.titleize %></h2>
+    <% end %>
+    <% if @phone %>
+      <h2>Phone: <%= @phone %></h2>
+    <% end %>
+    <p>
+      <%= @body %>
+    </p>
+  </body>
+</html>
