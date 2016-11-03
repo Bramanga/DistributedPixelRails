@@ -1,10 +1,10 @@
 class ContactMailer < ApplicationMailer
-  def contact_email(name, company, phone, email, body)
-    @name = name
-    @company = company
-    @phone = phone
-    @email = email
-    @body = body
+  def contact_email(contact)
+    @name = contact.name
+    @company = contact.company
+    @phone = contact.phone
+    @email = contact.email
+    @body = contact.body
     @subject = "Message from #{@name}"
 
     if @company
